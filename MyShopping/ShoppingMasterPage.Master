@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ShoppingMasterPage.master.cs" Inherits="MyShopping.ShoppingMasterPage" %>
+
+<!DOCTYPE html>
+
+<html style="width: 100%; height: 100%">
+<head runat="server">
+    <script src="scripts/jquery-3.1.0.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <title>My Shopping Site</title>
+</head>
+<body style="padding-top: 60px; width: 100%; height: 100%">
+    <!--In bootstrap, by default the grid classes of a given screen size apply to that
+        screen size and to larger screen sizes unless it is overridden by the larger
+        screen size grid classes and to the smaller screen sizes everything will
+        be stacked on top of each other meaning each spans across the entire column
+        i.e. 12  
+        -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">Online Shopping</a>
+            <button type="button" class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Shop
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <asp:HyperLink ID="Home" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="Electronics" runat="server" NavigateUrl="~/Products.aspx?ID=10">Electronics</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="Kitchen" runat="server" NavigateUrl="~/Products.aspx?ID=20">Kitchen</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="Luggage" runat="server" NavigateUrl="~/Products.aspx?ID=30">Luggage</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="ViewCart" runat="server" NavigateUrl="~/ViewCart.aspx">View Cart</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="AddProduct" runat="server" NavigateUrl="#">Add Product</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="UploadImage" runat="server" NavigateUrl="#">Upload Image</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="ViewProducts" runat="server" NavigateUrl="#">View Products</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="Contact" runat="server" NavigateUrl="~/Contact.aspx">Contact Us</asp:HyperLink></li>
+                            <li>
+                                <asp:HyperLink ID="Logout" runat="server" NavigateUrl="#">Logout</asp:HyperLink></li>
+                            <li><a href="#">Accounting</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="width: 100%; height: 100%">
+        <div class="row" style="width: 100%; height: 100%">
+            <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+                This contains contents from content page
+            </asp:ContentPlaceHolder>
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text">&copy; Murali Krishnan</p>
+        </div>
+    </div>
+</body>
+</html>
